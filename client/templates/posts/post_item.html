@@ -1,0 +1,17 @@
+<template name="postItem">
+	<div class="post" {{attributes}}>
+		<a href="#" class="upvote btn {{upvotedClass}}">UP</a>
+		<div class="post-content">
+			<h3><a href="{{url}}">{{title}}</a><span>{{domain}}</span></h3>
+			<p>
+				{{votes}} 투표,
+				submitted by {{author}}, 
+				<a href="{{pathFor 'postPage'}}">{{commentsCount}} 개의 댓글</a>
+				{{#if ownPost}}
+				<a href="{{pathFor 'postEdit'}}">수정</a>
+				{{/if}}
+			</p>
+		</div>
+		<a href="{{pathFor 'postPage'}}" class="btn btn-default discuss">논의</a>
+	</div>
+</template>
